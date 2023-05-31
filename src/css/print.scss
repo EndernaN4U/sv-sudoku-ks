@@ -1,0 +1,14 @@
+@media print{
+    .EndFrame, .header{
+        display: none;
+    }
+    .FieldsContainer{
+        margin: 200px auto;
+        width: fit-content;
+    }
+    input.InputField{
+        color: black;
+        border: 2px solid black !important;
+        outline: 2px solid black;
+    }
+}

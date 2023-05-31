@@ -1,0 +1,126 @@
+$background:rgba(0,0,0,0.7);
+$fielddBg:rgba(0,0,0,0.7);
+$fieldColor:whitesmoke;
+
+$lightpink: #ff80db;
+$additional: #b000b5;
+
+
+body{
+    background-color: $background;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    *{
+        padding:5px;
+        margin:5px;
+    }
+
+    input[type="checkbox"]{
+        display: none;
+    }
+
+    label, button{
+        display: grid;
+        place-items: center;
+        width:80px;
+        height:30px;
+        border:2px solid whitesmoke;
+        background-color: rgba(59, 59, 59, 0.3);
+        color:whitesmoke;
+        transition: 0.3s linear;
+        border-radius: 5px;
+    }
+
+    label:hover, button:hover{
+        background-color:whitesmoke;
+        color:$fielddBg;
+        border:2px solid $fielddBg;
+   
+    }
+
+    .hintMenu{
+        display: flex;
+
+        .EditHint.Editing, .ShowHintMenu.Showing{
+            background: $lightpink;
+
+            &:hover{
+                background: $additional;
+                color: $fieldColor;
+            }
+        }
+    }
+
+    .AddButtons{
+        display: flex;
+    }
+
+    .numberMenu{
+        color:$fieldColor;
+    }
+}
+    
+.wyborCon{
+    display:flex;
+    justify-content: center;
+}
+.FieldsContainer{
+    display: grid;
+    grid-template-columns: repeat(9,55px);
+    gap:6px;
+    justify-content: center;
+    margin-top:100px;
+
+    .Field{
+        width: 55px;
+        height: 55px;
+
+        position: relative;
+        
+        .InputField{
+            width: 100%;
+            height: 100%;
+
+            text-align: center;
+
+            font-size: 1.35rem;
+
+            caret-color: transparent;
+
+            border: none;
+            border-radius: 5px;
+
+            outline: none;
+
+            &:focus{
+                outline: 2px solid $fieldColor;
+            }
+
+            &:disabled{
+                background: $additional;
+                color: $fieldColor;
+            }
+
+            &.Correct:not(:disabled){
+                background-color: $lightpink;
+            }
+            &.Incorrect:not(:disabled){
+                background-color: grey;
+            }
+        }
+
+        .HintField{
+            position: absolute;
+            z-index: 1;
+            top:3px;
+            right: 3px;
+
+            font-size: 12px;
+        }
+    }
+}

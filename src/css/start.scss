@@ -1,0 +1,57 @@
+.WyboryGry{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+
+    margin:50px;
+
+    
+
+    .BoxyGry{
+
+        input[type="radio"]{
+            display: none;
+        }
+        
+        label{
+            padding: 5px;
+            border: 2px solid $fieldColor;
+            border-radius: 5px;
+            color: $fieldColor;
+
+            transition: background .25s ease;
+
+            &.Active{
+                background: $lightpink;
+            }
+
+            &:hover{
+                background: $additional;
+            }
+        }
+    }
+
+    .wyborCon{
+        display: flex;
+        gap: 20px;
+    }
+
+    .StartGame{
+        color: $fieldColor;
+        
+        border: 2px solid $fieldColor;
+        border-radius: 5px;
+        background: none;
+
+        padding: 5px;
+
+        transition: background .25s ease;
+
+        &:hover{
+            background: $additional;
+        }
+    }
+}
